@@ -1,73 +1,111 @@
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  "autocmd VimEnter * PlugInstall
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+  " Change dates fast
+  Plug 'tpope/vim-speeddating'
+  " Convert binary, hex, etc..
+  Plug 'glts/vim-radical'
+  " Files
+  Plug 'tpope/vim-eunuch'
+  " Repeat stuff
+  Plug 'tpope/vim-repeat'
+  " Surround
+  Plug 'tpope/vim-surround'
+  " Better Comments
+  Plug 'tpope/vim-commentary'
+  " Plug 'preservim/nerdcommenter'
+  " Have the file system follow you around
+  Plug 'airblade/vim-rooter'
+  " auto set indent settings
+  Plug 'tpope/vim-sleuth'
+
+  if exists('g:vscode')
+    " Easy motion for VSCode
+    Plug 'asvetliakov/vim-easymotion'
+
+  else
+    " Text Navigation
+    Plug 'justinmk/vim-sneak'
+    Plug 'unblevable/quick-scope'
+    " Plug 'easymotion/vim-easymotion'
+    " Add some color
+    Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'junegunn/rainbow_parentheses.vim'
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
-    
-    " File Explorer | Disabled because testing coc-explorer
-    " Plug 'scrooloose/NERDTree'
-    
-    " Auto pairs for '(' '[' '{'
+    " Cool Icons
+    Plug 'ryanoasis/vim-devicons'
+    " Auto pairs for '(' '[' '{' 
     Plug 'jiangmiao/auto-pairs'
-    
-    " Dracula Theme | Disabled because onedark 
-    "     Plug 'dracula/vim', { 'as': 'dracula' }
-    
-    " Vim Dogrun theme | Disabled because testing coc-explorer
-    " Plug 'wadackel/vim-dogrun'
-
-    " One Dark theme
+    " Closetags
+    Plug 'alvan/vim-closetag'
+    " Themes
     Plug 'joshdick/onedark.vim'
-
-    " Intellisense COC
-    Plug 'neoclide/coc.nvim',{'branch':'release'}
-
-    " Airline
+    "Plug 'gruvbox-community/gruvbox'
+    " Plug 'kaicataldo/material.vim'
+    " Plug 'NLKNguyen/papercolor-theme'
+    " Plug 'tomasiser/vim-code-dark'
+    " Intellisense
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Status Line
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-
+    " Plug 'vim-airline/vim-airline-themes'
     " Ranger
+    " Plug 'francoiscabrol/ranger.vim'
+    " Plug 'rbgrouleff/bclose.vim'
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-
-    " TS Syntax
-    Plug 'HerringtonDarkholme/yats.vim'
-
-    " Git Integration
-    Plug 'mhinz/vim-signify'
+    " FZF
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    " Git
+    " Plug 'mhinz/vim-signify'
+    Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
-
-    " Sneak
-    Plug 'justinmk/vim-sneak'
-    
-    " Nerd commenter
-    " Plug 'preservim/nerdcommenter'
-    
-    " Better Comments
-      Plug 'tpope/vim-commentary'
-    
-    " Have the file system follow you around
-    Plug 'airblade/vim-rooter'
-
     " Terminal
     Plug 'voldikss/vim-floaterm'
-
+    " Start Screen
+    Plug 'mhinz/vim-startify'
+    " Vista
+    Plug 'liuchengxu/vista.vim'
     " See what keys do like in emacs
     Plug 'liuchengxu/vim-which-key'
-
+    " Zen mode
+    Plug 'junegunn/goyo.vim'
+    " Making stuff
+    Plug 'neomake/neomake'
     " Snippets
     Plug 'honza/vim-snippets'
     Plug 'mattn/emmet-vim'
+    " Better Comments
+    " Plug 'jbgutierrez/vim-better-comments'
+    " Echo doc
+    " Plug 'Shougo/echodoc.vim'
+    " Interactive code
+    Plug 'ChristianChiarulli/codi.vim'
+    " Indentation lines
+    Plug 'Yggdroot/indentLine' " Pretty indented lines
+    Plug 'davidhalter/jedi-vim'
 
-    " Dev Icons | Always load devicons as the very last [wiki]
-    Plug 'ryanoasis/vim-devicons'
+    " go
+     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    " Vim Wiki
+    " Plug 'https://github.com/vimwiki/vimwiki.git'
+  endif
 
-    call plug#end()
 
+call plug#end()
 
 " Automatically install missing plugins on startup
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
-
+" autocmd VimEnter *
+"   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+"   \|   PlugInstall --sync | q
+"   \| endif
