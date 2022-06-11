@@ -72,6 +72,9 @@ bindkey -r "^d"
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 compinit
 
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
