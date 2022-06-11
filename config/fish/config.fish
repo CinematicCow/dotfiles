@@ -2,24 +2,12 @@ function fish_mode_prompt; end
 
 # turn on vi mode when the shell starts
 fish_vi_key_bindings
+fzf_key_bindings
 
-set PATH /home/pk/.nvm/versions/node/v16.10.0/bin/ $PATH
-
-# one dark fish
-if status is-interactive
-    set -l onedark_options '-b'
-
-    if set -q VIM
-        # Using from vim/neovim.
-        set onedark_options "-256"
-    else if string match -iq "eterm*" $TERM
-        # Using from emacs.
-        function fish_title; true; end
-        set onedark_options "-256"
-    end
-
-    set_onedark $onedark_options
-end
+set PATH /home/pk/.nvm/versions/node/v16.14.2/bin/ $PATH
+set PATH /home/pk/.cargo/bin $PATH
+set PATH /usr/local/go/bin $PATH
+set GOPATH /usr/local/go $GOPATH
 
 # Set the normal and visual mode cursors to a block
 set fish_cursor_default block
