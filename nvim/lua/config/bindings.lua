@@ -27,3 +27,20 @@ vim.keymap.set("n", "<C-S-j>", "<C-w>-")
 vim.keymap.set("n", "<C-S-k>", "<C-w>+")
 vim.keymap.set("n", "<C-S-l>", "<C-w>>")
 vim.keymap.set("n", "<leader>bd", ":bd!<CR>")
+
+-- LSP shit
+vim.keymap.set('n','<leader>lr', vim.lsp.buf.rename)
+vim.keymap.set('n','<leader>la', vim.lsp.buf.code_action)
+vim.keymap.set('n','gd', vim.lsp.buf.definition)
+vim.keymap.set('n','gI', vim.lsp.buf.implementation)
+vim.keymap.set('n','<leader>D', vim.lsp.buf.type_definition)
+vim.keymap.set('n','<leader>K', vim.lsp.buf.hover)
+
+-- rnvimr
+vim.keymap.set('n','<leader>e',":RnvimrToggle<CR>")
+
+-- trouble
+vim.keymap.set('n','<leader>lj','<cmd>Trouble diagnostics jump=true next<cr>')
+vim.keymap.set('n','<leader>lk','<cmd>Trouble diagnostics jump=true prev<cr>')
+vim.keymap.set('n','<leader>ll','<cmd>Trouble diagnostics toggle<cr>')
+vim.keymap.set('n','<leader>lt','<cmd>Trouble diagnostics toggle filter.buf=0<cr>')
