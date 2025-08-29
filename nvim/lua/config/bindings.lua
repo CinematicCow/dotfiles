@@ -39,8 +39,7 @@ vim.keymap.set('n','<leader>K', vim.lsp.buf.hover)
 -- rnvimr
 vim.keymap.set('n','<leader>e',":RnvimrToggle<CR>")
 
--- trouble
-vim.keymap.set('n','<leader>lj','<cmd>Trouble diagnostics jump=true next<cr>')
-vim.keymap.set('n','<leader>lk','<cmd>Trouble diagnostics jump=true prev<cr>')
-vim.keymap.set('n','<leader>ll','<cmd>Trouble diagnostics toggle<cr>')
-vim.keymap.set('n','<leader>lt','<cmd>Trouble diagnostics toggle filter.buf=0<cr>')
+-- diagnostic
+vim.keymap.set('n','[d', vim.diagnostic.goto_next)
+vim.keymap.set('n',']d', vim.diagnostic.goto_prev)
+vim.keymap.set('n','<leader>d', vim.diagnostic.open_float)
