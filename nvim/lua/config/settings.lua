@@ -23,6 +23,11 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.opt.winblend = 0
+vim.opt.pumblend = 0
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+vim.cmd('hi NormalNC guibg=NONE ctermbg=NONE')
+
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
