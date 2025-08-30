@@ -1,4 +1,4 @@
-return{
+return {
     'neovim/nvim-lspconfig',
     dependencies = {
         'williamboman/mason-lspconfig.nvim',
@@ -13,18 +13,18 @@ return{
 
         cmp.setup({
             sources = {
-                {name = 'nvim_lsp'},
-                {name = 'luasnip'},
-                {name = 'buffer'},
-                {name = 'path'},
+                { name = 'nvim_lsp' },
+                { name = 'luasnip' },
+                { name = 'buffer' },
+                { name = 'path' },
             },
             mapping = cmp.mapping.preset.insert({
-                ['<C-b>']= cmp.mapping.scroll_docs(-4),
-                ['<C-f>']= cmp.mapping.scroll_docs(4),
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),
                 ['<C-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
                 ['<C-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-                ['<C-Space>']= cmp.mapping.complete(),
-                ['<Tab>']= cmp.mapping.confirm({select = true}),
+                ['<C-Space>'] = cmp.mapping.complete(),
+                ['<Tab>'] = cmp.mapping.confirm({ select = true }),
             }),
         })
 
@@ -40,14 +40,14 @@ return{
                     },
                     workspace = {
                         library = {
-                            [vim.fn.expand('$VIMRUNTIME/lua')]=true,
-                            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')]=true,
+                            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
                         },
                         maxPreload = 1000000,
                         preloadFileSize = 10000,
                     },
                     telemetry = {
-                        enable=false,
+                        enable = false,
                     },
                 },
             },

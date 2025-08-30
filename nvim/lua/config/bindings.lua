@@ -1,5 +1,5 @@
-vim.keymap.set('i','jk','<ESC>')
-vim.keymap.set('n','<Leader>E', vim.cmd.Ex)
+vim.keymap.set('i', 'jk', '<ESC>')
+vim.keymap.set('n', '<Leader>E', vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -11,9 +11,9 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- great remaps stolen from primeagen
-vim.keymap.set("x", "<leader>p", [["_dP]])          -- yanks to nvim register
-vim.keymap.set("n", "<leader>Y", [["+Y]])           -- yanks to system clipboard
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])    -- deletes to black hole register
+vim.keymap.set("x", "<leader>p", [["_dP]])         -- yanks to nvim register
+vim.keymap.set("n", "<leader>Y", [["+Y]])          -- yanks to system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- deletes to black hole register
 
 -- splits like no other
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>")
@@ -29,17 +29,18 @@ vim.keymap.set("n", "<C-S-l>", "<C-w>>")
 vim.keymap.set("n", "<leader>bd", ":bd!<CR>")
 
 -- LSP shit
-vim.keymap.set('n','<leader>lr', vim.lsp.buf.rename)
-vim.keymap.set('n','<leader>la', vim.lsp.buf.code_action)
-vim.keymap.set('n','gd', vim.lsp.buf.definition)
-vim.keymap.set('n','gI', vim.lsp.buf.implementation)
-vim.keymap.set('n','<leader>D', vim.lsp.buf.type_definition)
-vim.keymap.set('n','<leader>K', vim.lsp.buf.hover)
+vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename)
+vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'gI', vim.lsp.buf.implementation)
+vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
+vim.keymap.set('n', '<leader>K', vim.lsp.buf.hover)
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
 -- rnvimr
-vim.keymap.set('n','<leader>e',":RnvimrToggle<CR>")
+vim.keymap.set('n', '<leader>e', ":RnvimrToggle<CR>")
 
 -- diagnostic
-vim.keymap.set('n','[d', vim.diagnostic.goto_next)
-vim.keymap.set('n',']d', vim.diagnostic.goto_prev)
-vim.keymap.set('n','<leader>d', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_next)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
